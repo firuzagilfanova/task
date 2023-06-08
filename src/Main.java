@@ -16,9 +16,9 @@ public class Main {
         );
 
 //Проверим, что сообщение создалось как надо.
-        assert firstMessage.getFrom().equals("Robert Howard"): "Wrong firstMessage from address";
-        assert firstMessage.getTo().equals("H.P. Lovecraft"): "Wrong firstMessage to address";
-        assert firstMessage.getContent().endsWith("Howard!"): "Wrong firstMessage content ending";
+        assert firstMessage.getFrom().equals("Robert Howard") : "Wrong firstMessage from address";
+        assert firstMessage.getTo().equals("H.P. Lovecraft") : "Wrong firstMessage to address";
+        assert firstMessage.getContent().endsWith("Howard!") : "Wrong firstMessage content ending";
 
         MailMessage secondMessage = new MailMessage(
                 "Jonathan Nolan",
@@ -52,16 +52,16 @@ public class Main {
                 Arrays.asList(
                         "This \"The Shadow over Innsmouth\" story is real masterpiece, Howard!"
                 )
-        ): "wrong mailService mailbox content (1)";
+        ) : "wrong mailService mailbox content (1)";
 
         assert mailBox.get("Christopher Nolan").equals(
                 Arrays.asList(
                         "Брат, почему все так хвалят только тебя, когда практически все сценарии написал я. Так не честно!",
                         "Я так и не понял Интерстеллар."
                 )
-        ): "wrong mailService mailbox content (2)";
+        ) : "wrong mailService mailbox content (2)";
 
-        //assert mailBox.get(randomTo).equals(Collections.<String>emptyList()): "wrong mailService mailbox content (3)";
+        assert mailBox.get(randomTo).equals(Collections.<String>emptyList()) : "wrong mailService mailbox content (3)";
 
 // Создание списка из трех зарплат.
         Salary salary1 = new Salary("Facebook", "Mark Zuckerberg", 1);
@@ -76,9 +76,9 @@ public class Main {
 
 ////Проверка почтового ящика
         Map<String, List<Integer>> salaries = salaryService.getMailBox();
-        assert salaries.get(salary1.getTo()).equals(Arrays.asList(1)): "wrong salaries mailbox content (1)";
-        assert salaries.get(salary2.getTo()).equals(Arrays.asList(Integer.MAX_VALUE)): "wrong salaries mailbox content (2)";
-        assert salaries.get(randomTo).equals(Arrays.asList(randomSalary)): "wrong salaries mailbox content (3)";
+        assert salaries.get(salary1.getTo()).equals(Arrays.asList(1)) : "wrong salaries mailbox content (1)";
+        assert salaries.get(salary2.getTo()).equals(Arrays.asList(Integer.MAX_VALUE)) : "wrong salaries mailbox content (2)";
+        assert salaries.get(randomTo).equals(Arrays.asList(randomSalary)) : "wrong salaries mailbox content (3)";
         System.out.println();
     }
 }

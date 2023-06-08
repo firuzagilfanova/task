@@ -1,4 +1,4 @@
-public class Salary extends MailMessage{
+public class Salary extends MailMessage {
     String from;
     String to;
     Integer contentInt;
@@ -8,6 +8,7 @@ public class Salary extends MailMessage{
         this.to = to;
         this.contentInt = contentInt;
     }
+
     public String getFrom() {
         return from;
     }
